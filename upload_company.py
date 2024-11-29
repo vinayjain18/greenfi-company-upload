@@ -133,5 +133,3 @@ upload_csv_to_mysql("company_details_s3_updated.csv", "d_company_details")
 
 # # Call the function to print rows starting from the 65000th row
 # print_rows_from_csv("company_details_s3_updated.csv", 64990)
-
->>>>>>> 0825e8a6391d620b194bc7b72c7b5f2faadb4347
