@@ -108,28 +108,30 @@ def upload_csv_to_mysql(csv_file, table_name):
     # Disconnect from the database
     disconnect(conn)
 
-upload_csv_to_mysql("company_details_s3_updated.csv", "d_company_details")
+# upload_csv_to_mysql("company_details_s3_updated.csv", "d_company_details")
 
 
-# def print_rows_from_csv(csv_file, start_row):
-#     try:
-#         # Load the CSV file into a DataFrame
-#         df = pd.read_csv(csv_file)
-#         df = df.iloc[64999:]
+def print_rows_from_csv(csv_file, start_row):
+    try:
+        # Load the CSV file into a DataFrame
+        df = pd.read_csv(csv_file)
+        df = df.iloc[64999:]
 
-#         print(df.head(10))
+        print(df.head(10))
+        print("-----------------------")
+        print(df.tail())
         
-#         # Check if start_row is within the DataFrame's range
-#         if start_row >= len(df):
-#             print(f"Start row {start_row} is out of range. The DataFrame has only {len(df)} rows.")
-#             return
+        # Check if start_row is within the DataFrame's range
+        if start_row >= len(df):
+            print(f"Start row {start_row} is out of range. The DataFrame has only {len(df)} rows.")
+            return
         
-#         # Print rows starting from the specified start_row
-#         # for index, row in df.iloc[start_row:].iterrows():
-#         #     print(row.to_dict())
+        # Print rows starting from the specified start_row
+        # for index, row in df.iloc[start_row:].iterrows():
+        #     print(row.to_dict())
     
-#     except Exception as e:
-#         print(f"Error reading CSV file: {e}")
+    except Exception as e:
+        print(f"Error reading CSV file: {e}")
 
-# # Call the function to print rows starting from the 65000th row
-# print_rows_from_csv("company_details_s3_updated.csv", 64990)
+# Call the function to print rows starting from the 65000th row
+print_rows_from_csv("company_details_s3_updated.csv", 64990)
